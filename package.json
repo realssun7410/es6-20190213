@@ -1,0 +1,23 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realssun7410/es6-20190213.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realssun7410/es6-20190213/issues"
+  },
+  "homepage": "https://github.com/realssun7410/es6-20190213#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "underscore": "^1.9.1"
+  }
+}

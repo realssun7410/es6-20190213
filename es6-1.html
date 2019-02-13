@@ -1,0 +1,157 @@
+<script>
+    const log = console.log;
+    // var a = 10;
+    // var a = 20;
+    // console.log(a);
+    // function test() {
+    //     var a = 20;
+    //     console.log(a);
+    // }
+    // a;
+    // console.log(a);
+
+
+    // var fn = function(x,y){
+    //     return x + y;
+    // }
+
+    //es5에서 안 먹는 것
+    const fn = function (x, y) {
+        return x + y;
+    }
+
+    const fn2 = (x, y) => {
+        return x + y;
+    }
+
+    const fn3 = (x, y) => (x + y);
+    log(fn3(2, 10));
+
+
+    //String
+    var str = "2019-02-11 12:33:34";
+    log(str.substr(0, 10));
+
+    var str = "Hello world"
+    var chkStr = "He";
+    log(str.startsWith(chkStr));
+    log(str.endsWith(chkStr));
+    log(str.includes(chkStr));
+
+    //Class
+    //ES5
+    var Human = (function () {
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Human.prototype.getName = function () {
+            return this.name;
+        }
+        Human.prototype.setName = function (name) {
+            this.name = name;
+        }
+        return Human;
+    }());
+
+    var hong = new Human("홍길동", 25);
+    // hong.setName("홍길순"); 이름을 다시 설정
+    log(hong.getName());
+
+    // ES6
+    class Human2 {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        showInfo() {
+            console.log(`${this.name}의 나이는 ${this.age}세 입니다.`);
+        }
+    }
+    var hong2 = new Human2("홍길동", 30);
+    hong2.showInfo();
+
+    var obj = {
+        name: "홍길동",
+        age: 25,
+        getName: function () {
+
+        }
+    };
+
+    //es6문법
+    var name = "홍길동";
+    var age = 25;
+    var obj = {
+        name, //name: name 과 같다
+        age,
+    };
+
+    var json = {
+        datas: [{
+                "name": "홍길동",
+                "age": 25,
+            },
+
+            {
+                "name": "홍길순",
+                "age": 30,
+            }
+        ]
+    };
+    var [, d] = json.datas;
+    var {
+        name2,
+        age2
+    } = d;
+    log(d);
+
+    //Set 객체
+    var set = new Set();
+    log(set);
+    set.add('A');
+    set.add('B');
+    set.add(() => {});
+    set.add('A');
+    set.add('B');
+    log(set, set.size);
+
+    //WeakSet
+    var set2 = new WeakSet();
+    set2.add(() => {});
+    log(set2);
+
+    //Map
+    var map = new Map();
+    map.set(0, "영");
+    map.set('A', "String A");
+    map.set('B', "String B");
+    map.set(() => {}, "String A");
+
+    var arr = ['A', 'B', 'C'];
+    var arrN = [1, 2, 3];
+    Array.prototype.getMin = function(){};
+    Array.prototype.getMax = function(){};
+    for (var i in arr) {
+        log(i, arr[i]);
+    }
+
+    for (var v of arr) {
+        log(v);
+    }
+
+    for (var [k,v] of map) {
+        log(k,v);
+    }
+
+    arr.forEach(function(k,v){
+        log(k,v);
+    }); //자바스크립트
+    // $arr.each(); //제이커리
+</script>
